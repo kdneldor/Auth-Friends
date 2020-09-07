@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {axiosWithAuth} from './utils/axiosWithAuth'
 import Friend from './Friend'
+import FriendForm from './FriendForm'
 
 const FriendsList = () => {
     const [friends, setFriends] = useState([])
@@ -15,6 +16,10 @@ const FriendsList = () => {
         .catch(err => console.log(err))
     }
 
+    const updateFriends = (newFriend) => {
+        setFriends([...friends, newFriend])
+    }
+
     useEffect(() => {
         getFriends();
     }, [])
@@ -23,6 +28,7 @@ const FriendsList = () => {
 
     return(
         <div>
+            <FriendForm updateFriends={updateFriends}/>
             {friends.map((friend) => {
                 return <Friend friend={friend}/>;
             })}

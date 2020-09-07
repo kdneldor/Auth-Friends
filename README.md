@@ -49,9 +49,9 @@ Topics:
 
 **Adding New Friends**
 
-- Create a form to collects data for a new friend.
+<!-- - Create a form to collects data for a new friend.
 - Make a POST request to add a friend to the database
-- Each `friend` item that is in the `friends` array should have the following format:
+- Each `friend` item that is in the `friends` array should have the following format: -->
 
 ```js
 {
